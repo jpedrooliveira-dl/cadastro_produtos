@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechList - Gestão de Catálogo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- HEADER -->
+        <header class="dashboard-header">
+            <div class="brand-wrapper">
+                <img src="./public/assets/img/nano_banana_logo.jpg" alt="TechBanana Logo" class="brand-logo">
+                <div class="brand-text">
+                    <h1>TechList Produtos</h1>
+                    <p class="brand-sub">Sistema de Gestão de Catálogo & Estoque</p>
+                </div>
+            </div>
+            <div class="status-badge">
+                <span class="pulse-dot"></span>
+                <span class="status-text">Verificando...</span>
+            </div>
+        </header>
+
+        <!-- MAIN LAYOUT -->
+        <main class="dashboard-content">
+            <!-- COLUMN 1: CADASTRO -->
+            <section class="panel-card form-panel">
+                <div class="panel-header">
+                    <span class="panel-icon">➕</span>
+                    <h2>Cadastrar Novo Produto</h2>
+                </div>
+                
+                <form id="produtoForm" class="modern-form">
+                    <div class="field-group">
+                        <label for="nome">Nome do Produto</label>
+                        <div class="field-wrapper">
+                            <span class="input-icon">🏷️</span>
+                            <input type="text" id="nome" placeholder="Ex: Teclado Mecânico RGB" required>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="preco">Preço (R$)</label>
+                        <div class="field-wrapper">
+                            <span class="input-icon">💵</span>
+                            <input type="number" step="0.01" id="preco" placeholder="Ex: 299.90" required>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="descricao">Descrição do Produto</label>
+                        <div class="field-wrapper">
+                            <span class="input-icon textarea-icon">📝</span>
+                            <textarea id="descricao" placeholder="Escreva os detalhes técnicos do produto (opcional)" rows="4"></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <span>Salvar no Banco</span>
+                    </button>
+                </form>
+            </section>
+
+            <!-- COLUMN 2: LISTAGEM -->
+            <section class="panel-card list-panel">
+                <div class="panel-header">
+                    <span class="panel-icon">📦</span>
+                    <h2>Produtos Cadastrados</h2>
+                </div>
+                
+                <div class="list-container">
+                    <ul id="listaProdutos">
+                        <!-- Itens renderizados dinamicamente pelo app.js original -->
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="public/js/app.js"></script>
+</body>
+</html>
