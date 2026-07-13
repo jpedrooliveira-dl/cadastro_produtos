@@ -1,4 +1,4 @@
-# 🍌 TechList - Sistema Gestão de Catálogo & Estoque
+# 🛒 TechList - Sistema Gestão de Catálogo & Estoque
 
 > Uma aplicação web completa, moderna e totalmente containerizada para controle, cadastro e visualização de catálogo de produtos.
 
