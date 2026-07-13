@@ -3,7 +3,7 @@ const lista = document.getElementById('listaProdutos');
 
 async function carregarProdutos() {
     lista.innerHTML = '';
-    const res = await fetch('http://localhost:3000/produtos');
+    const res = await fetch('/produtos');
     const produtos = await res.json();
 
     produtos.forEach(prod => {
@@ -20,7 +20,7 @@ form.addEventListener('submit', async (e) => {
     const preco = document.getElementById('preco').value;
     const descricao = document.getElementById('descricao').value;
 
-    await fetch('http://localhost:3000/produtos', {
+    await fetch('/produtos', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ nome, preco, descricao })
@@ -47,15 +47,15 @@ function statusLoja() {
     const ponto = document.querySelector('.pulse-dot')
 
     if( horasAgora >= horasAbertura && horasAgora < horasFechamento) {
-        texto.innerHTML = 'Loja aberta'
-        badge.style.color = '#e6f7ed'; 
-        badge.style.color = '#1f7a42';            
-        ponto.style.backgroundColor = '#2ec4b6';
+        texto.innerHTML = 'Loja aberta';
+        badge.style.backgroundColor = '#059669'; // Verde pastel
+        badge.style.color = '#ECFDF5'; // Verde escuro para o texto
+        ponto.style.backgroundColor = '#10B981'; // Verde vibrante para o ponto
     } else {
-        texto.innerHTML = 'Loja fechada'
-        badge.style.backgroundColor = "#fde8e8"; 
-        badge.style.color = "#9b1c1c";
-        ponto.style.backgroundColor = "#e02424";
+        texto.innerHTML = 'Loja fechada';
+        badge.style.backgroundColor = '#DC2626'; // Vermelho pastel
+        badge.style.color = '#FEF2F2'; // Vermelho escuro para o texto
+        ponto.style.backgroundColor = '#EF4444'; // Vermelho vibrante para o ponto
     }
 }
 
